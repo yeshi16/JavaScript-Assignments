@@ -4,8 +4,8 @@ const PI = 3.1415;
 const rad = 5;
 const area = PI * rad * rad;
 const minPlantArea = 0.8;
-const plants = 20;
-const startArea = minPlantArea * plants; // 16
+let plants = 20;
+let startArea = minPlantArea * plants; // 16
 const maxArea = area * 0.8;
 const norArea = area * 0.5;
 let week = 3;
@@ -35,3 +35,11 @@ else if((week * startArea) > norArea && (week * startArea) <= maxArea){
     week two = pruned
     week three = pruned
 */
+
+// Part 2: Thinking Bigger
+
+plants = 100;
+week = 10;
+startArea = maxArea * plants;
+const newArea = startArea * week;
+console.log(`The additional area required for 10 weeks is ${newArea} if the plantes weren't pruned.`);
