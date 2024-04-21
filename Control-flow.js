@@ -56,3 +56,5 @@ console.log(`The additional area required for 10 weeks is ${newArea} if the plan
  }catch(err){
     console.log(err);
  }
+
+  
