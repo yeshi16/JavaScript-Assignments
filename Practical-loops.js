@@ -39,7 +39,7 @@ let cell1 = "";
 let cell2 = "";
 let cell3 = "";
 let cell4 = "";
-let str ="ID,Name,Occupation,Age\\n42,Bruce,Knight,41\\n57,Bob,Fry Cook,19\\n63,Blaine,Quiz Master,58\\n98,Bill,Doctors Assistant,26";
+let str ="ID,Name,Occupation,Age\\n42,Bruce,Knight,41\\n57,Bob,Fry Cook,19\\n63,Blaine,Quiz Master,58\\n98,Bill,Doctor\'s Assistant,26";
 let char = '';
 let charLength = str.length;
 let commaCount = 1;
@@ -52,6 +52,7 @@ for (char of str) {
     if (commaCount == 1) {
         if (char == ",") {
             commaCount++;
+            charLength--;
             continue;
         }
         cell1 += char;
@@ -60,6 +61,7 @@ for (char of str) {
     if (commaCount == 2) {
         if (char == ",") {
             commaCount++;
+            charLength--;
             continue;
         }
         cell2 += char;
@@ -68,6 +70,7 @@ for (char of str) {
 
     if (commaCount == 3) {
         if (char == ",") {
+            charLength--;
             commaCount++;
             continue;
         }
@@ -75,11 +78,12 @@ for (char of str) {
         charLength--;
     }
     if (commaCount == 4) {
-        if (char == "\\") {
+       
+        if (char == "\\") { 
             charLength--;
             console.log(`${cell1}, ${cell2}, ${cell3}, ${cell4}`);
             continue;
-        }
+        } 
         if (char == "n") {
             charLength--;
             commaCount = 1;
@@ -91,6 +95,10 @@ for (char of str) {
         }
         cell4 += char;
         charLength--;
+        if(charLength == 0){
+            console.log(`${cell1}, ${cell2}, ${cell3}, ${cell4}`);
+        }
     }
+    
 }
 
