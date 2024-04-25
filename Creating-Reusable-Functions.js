@@ -85,8 +85,8 @@ let data = [
 ]
 
 // Sort the array by age.
-let sortedData = data.sort((a, b)=> a.age - b.age)
- //console.log(sortedData);
+let sortedData = data.sort((ageOne, ageTwo)=> ageOne.age - ageTwo.age)
+// console.log(sortedData);
 
 // Filter the array to remove entries with an age greater than 50.
 let filteredData = data.filter((eachData) => eachData.age < "50");
@@ -111,3 +111,20 @@ let sumData = data.reduce((sum, eachData)=>{
 // console.log(sumData)
 let average = sumData/ data.length;
 //console.log(average);
+
+//Part 3: Thinking Critically
+// Take an object and increment its age field.
+let obj = { id: "42", name: "Bruce", occupation: "Knight", age: 41 }
+
+function incrementAge (obj){
+  obj.age ++;
+}
+incrementAge(obj)
+//console.log(obj.age)
+
+// Take an object, make a copy, and increment the age field of the copy. Return the copy.
+
+let newObj = {...obj}
+
+incrementAge(newObj);
+console.log(newObj.age);
