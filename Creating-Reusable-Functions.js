@@ -71,5 +71,43 @@ function printNum(n){
   printNum(n - 1);
   console.log(n);
 }
-
 //printNum(3);
+
+
+// Part 2: Thinking Methodically
+
+let data = [
+{ id: "42", name: "Bruce", occupation: "Knight", age: 41 },
+{ id: "48", name: "Barry", occupation: "Runner", age: 25 },
+{ id: "57", name: "Bob", occupation: "Fry Cook", age: 19 },
+{ id: "63", name: "Blaine", occupation: "Quiz Master", age: 58 },
+{ id: "7", name: "Bilbo", occupation: "None", age: 111 }
+]
+
+// Sort the array by age.
+let sortedData = data.sort((a, b)=> a.age - b.age)
+ //console.log(sortedData);
+
+// Filter the array to remove entries with an age greater than 50.
+let filteredData = data.filter((eachData) => eachData.age < "50");
+//console.log(filteredData)
+
+// Map the array to change the “occupation” key to “job” and increment every age by 1.
+const changedData = data.map(({ id, name, occupation, age }) => ({
+    id: id,
+   name: name,
+   job: occupation,
+   age: age 
+  }));
+ // console.log(changedData)
+
+// Use the reduce method to calculate the sum of the ages.
+// Then use the result to calculate the average age.
+
+let sumData = data.reduce((sum, eachData)=>{
+  return sum + eachData.age
+}, 0)
+
+// console.log(sumData)
+let average = sumData/ data.length;
+//console.log(average);
