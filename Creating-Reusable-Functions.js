@@ -123,8 +123,18 @@ incrementAge(obj)
 //console.log(obj.age)
 
 // Take an object, make a copy, and increment the age field of the copy. Return the copy.
+let obj2 = { id: "48", name: "Barry", occupation: "Runner"}
+function objCopy(obj) {
 
-let newObj = { ...obj }
+  let newObj = { ...obj }
+  if (!newObj.hasOwnProperty('age')) {
+    newObj.age = 0;
+  }
+  newObj.updated_at = new Date();
+  return newObj;
+}
 
-incrementAge(newObj);
-console.log(newObj.age);
+let copiedObj = objCopy(obj);
+console.log(copiedObj)
+let copiedObjNoAge = objCopy(obj2);
+console.log(copiedObjNoAge)
